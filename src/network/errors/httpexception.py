@@ -16,8 +16,6 @@ class ClientError(HttpException):
         message = f"""
             Error: {code} {text}
             Connecting to: {host}
-
-            
             """
         return cls(message)
 
