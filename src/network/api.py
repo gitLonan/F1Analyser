@@ -1,6 +1,8 @@
 #My classes
 from src.network.http import HttpRequest
 from src.network.errors.httpexception import HttpException
+from src.DataExtraction.jsonhandling import JsonHandling
+
 #My func
 from urllib.parse import quote
 
@@ -13,10 +15,12 @@ class API(Enum):
     LAPS = "/v1/laps?"
     POSITION = "/v1/position?"
     STINTS = "/v1/stints?"
+    SESSIONS = "/v1/sessions?"
+    MEETINGS = "/v1/meetings?"
 
 class ApiCommunication:
 
-    def get_api(host: str, api: str =None,attributes: list[str]=[]) -> json:
+    def communication(host: str, api: str =None,attributes: list[str]=[]) -> json:
         """ 
             Args:
                 host (str) - websites domain name, example api.openf1.org
@@ -50,16 +54,23 @@ class ApiCommunication:
         secure_con.close()
         return response_text
 
-class JsonHandling:
-    def extractingJson(data: str) -> json:
-        """Extracting json part of the Http get request, disregarding header"""
-        parts = data.split("\r\n\r\n", 1)
-        json_part = parts[1].strip()
-        json_response = json.loads(json_part)
-        return json_response
+    def get_api(host: str, api_path: str, attr: list[str] =[]) -> json:
+        """
+            Args:
+                host (str) - link to the server(or rather DSN name) 
+                api_path (str) - path to the api(on the server ofc)
+                attr (list[str]) - list by which a persone can specify the data    
+        """
+        data_drivers = ApiCommunication.communication(host, api_path, attributes=attr)
+        json_part = JsonHandling.extracting_json(data_drivers)
+        return json_part
     
-    def pretty_json(ugly_json: json) -> json:
-        return print(json.dumps(ugly_json, indent=4))
+
+    
+
+
+
+
         
 
 
