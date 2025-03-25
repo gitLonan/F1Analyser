@@ -16,10 +16,12 @@ class HttpRequest():
            sys.exit()
 
     def ssl_wrapper(host, socket):
+        """ Wraps socket with ssl for HTTPS """
         secure = ssl.create_default_context().wrap_socket(socket, server_hostname=host)
         return secure
     
-    def status_code(response):
+    def status_code(response: str) -> tuple[str,str]:
+        """ Extracts HTTP status code from the response """
         splited_response = response.split("\r\n")
         code = splited_response[0].split(" ")[1]
         text = splited_response[0].split(" ")[2]
