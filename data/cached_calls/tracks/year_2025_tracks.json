@@ -1,0 +1,62 @@
+[
+    {
+        "circuit_key": 63,
+        "circuit_short_name": "Sakhir",
+        "country_code": "BRN",
+        "country_key": 36,
+        "country_name": "Bahrain",
+        "date_start": "2025-02-26T07:00:00+00:00",
+        "gmt_offset": "03:00:00",
+        "location": "Sakhir",
+        "meeting_code": "BRN",
+        "meeting_key": 1253,
+        "meeting_name": "Pre-Season Testing",
+        "meeting_official_name": "FORMULA 1 ARAMCO PRE-SEASON TESTING 2025",
+        "year": 2025
+    },
+    {
+        "circuit_key": 10,
+        "circuit_short_name": "Melbourne",
+        "meeting_key": 1254,
+        "meeting_code": "AUS",
+        "location": "Melbourne",
+        "country_key": 5,
+        "country_code": "AUS",
+        "country_name": "Australia",
+        "meeting_name": "Australian Grand Prix",
+        "meeting_official_name": "FORMULA 1 LOUIS VUITTON AUSTRALIAN GRAND PRIX 2025",
+        "gmt_offset": "11:00:00",
+        "date_start": "2025-03-14T01:30:00+00:00",
+        "year": 2025
+    },
+    {
+        "circuit_key": 49,
+        "circuit_short_name": "Shanghai",
+        "meeting_key": 1255,
+        "meeting_code": "CHN",
+        "location": "Shanghai",
+        "country_key": 53,
+        "country_code": "CHN",
+        "country_name": "China",
+        "meeting_name": "Chinese Grand Prix",
+        "meeting_official_name": "FORMULA 1 HEINEKEN CHINESE GRAND PRIX 2025",
+        "gmt_offset": "08:00:00",
+        "date_start": "2025-03-21T03:30:00+00:00",
+        "year": 2025
+    },
+    {
+        "circuit_key": 46,
+        "circuit_short_name": "Suzuka",
+        "meeting_key": 1256,
+        "meeting_code": "JPN",
+        "location": "Suzuka",
+        "country_key": 4,
+        "country_code": "JPN",
+        "country_name": "Japan",
+        "meeting_name": "Japanese Grand Prix",
+        "meeting_official_name": "FORMULA 1 LENOVO JAPANESE GRAND PRIX 2025",
+        "gmt_offset": "09:00:00",
+        "date_start": "2025-04-04T02:30:00+00:00",
+        "year": 2025
+    }
+]
