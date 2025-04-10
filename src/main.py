@@ -1,90 +1,95 @@
+import time
+start = time.time()
 ## my Class import
-from src.network.api import ApiCommunication, API
-from src.DataExtraction.jsonhandling import JsonHandling
+from src.network.api_connector import ApiCommunication, API
+from src.data_extraction.jsonhandling import JsonHandling
+from src.data_extraction.cached_api_extraction.meetings_API import MeetingApi
+from src.data_extraction.cached_api_extraction.drivers_API import DriversApi
+from src.data_extraction.cached_api_extraction.laps_API import Laps
 from src.cache.caching import CacheAPI
-from src.DataExtraction.api.meetingsAPI import MeetingApi
+from src.analysis.uttility import SetParam
+from src.sim_gui import SimulateGui
+from src.analysis.analysis import Analysis
 
 ## my Func import
 
+
 import time
-import json
+import os
+import sys
 
 
-
-
-
-
+after_importing = time.time()
+print("Time it took to load imports: ", after_importing-start)
 
 
 def main():
     host = 'api.openf1.org'
+    Setparam = SetParam()
 
-    # data_drivers = ApiCommunication.drivers_api(host, API.DRIVERS.value, attr=[])
-    # #data_frame = get_last_race_drivers(data_drivers)
+    year, year_attr = SimulateGui.get_year_input()
+    if not CacheAPI.exists_data(year, "tracks"):  
+        print("We dont have data for that year")
+        json_part = ApiCommunication.get_api(host, API.MEETINGS.value, attr=[year_attr])
+        CacheAPI.cache_tracks(json_part, year)
+    track_list = MeetingApi.extract_tracks(year, Setparam)
+    SimulateGui.show_tracks(track_list)
+    meeting_key = SimulateGui.get_meeting_key(Setparam)
+
+
+    if not CacheAPI.exists_data(Setparam.meeting_key, "sessions"):
+        print("We dont have data for that track")
+        json_part = ApiCommunication.get_api(host, API.SESSIONS.value, attr=[meeting_key])
+        CacheAPI.cache_tracks_data(json_part, Setparam.meeting_key)
+    session_list = MeetingApi.extract_track_sessions(year, Setparam)
+    SimulateGui.show_sessions(session_list)
+    session_key = SimulateGui.get_session_key(Setparam)
+
+    if not CacheAPI.exists_data(Setparam.session_key, "drivers"):
+        json_part = ApiCommunication.get_api(host, API.DRIVERS.value, attr=[f"session_key={Setparam.session_key}"])
+        CacheAPI.cache_drivers(json_part, Setparam.session_key)
+        print(JsonHandling.pretty_json(json_part))
+    drivers = DriversApi.get_race_drivers(Setparam) 
+    print(drivers)
+    SimulateGui.show_drivers(drivers)
     
-    # data_laps = ApiCommunication.get_api(host, API.LAPS.value, attributes=['driver_number=44', "session_key=latest"])
-    # json_part = JsonHandling.extracting_json(data_laps)
-    # #.pretty_json(json_part)
+    if not CacheAPI.exists_data(Setparam.session_key, f"stints"):
+        os.makedirs((f"data/cached_calls/stints/{Setparam.session_key}"), exist_ok=True)
+        for num in Setparam.list_driver_numbers:
+            time.sleep(0.5)
+            if not CacheAPI.exists_data(num, f"stints/{Setparam.session_key}") or not len(os.listdir(f"data/cached_calls/stints/{Setparam.session_key}")) == 20:
+                json_part = ApiCommunication.get_api(host, API.STINTS.value, attr=[f"session_key={Setparam.session_key}", f"driver_number={num}"])
+                pretty_json = JsonHandling.pretty_json(json_part)
+                CacheAPI.cache_stints(json_part, Setparam.session_key, num)
 
-    # data_position = ApiCommunication.get_api(host, API.POSITION.value, attributes=['driver_number=44', "session_key=latest"])
-    # json_part = JsonHandling.extracting_json(data_position)
-    # #JsonHandling.pretty_json(json_part)
-
-    # data_position = ApiCommunication.get_api(host, API.STINTS.value, attributes=['driver_number=44', "session_key=latest"])
-    # json_part = JsonHandling.extracting_json(data_position)
-    # JsonHandling.pretty_json(json_part)
-
-    # json_part = ApiCommunication.get_api(host, API.MEETINGS.value, attr=['year=2024'])
-    # print(json_part)
-    # tracks = MeetingApi.extract_tracks(json_part)
-    # track_data = MeetingApi.extract_tracks_data(json_part)
-    # print(JsonHandling.pretty_json(track_data))
-    # print(JsonHandling.pretty_json(tracks))
-    # CacheAPI.cache_tracks(tracks)
-    # CacheAPI.cache_tracks_data(track_data)
-
-    #DA PROBAM SVOJ PLAN
-
-    ##lista trka u zavisnosti od godine
-    year = "year=2024"
-    json_part = ApiCommunication.get_api(host, API.MEETINGS.value, attr=[year])
-    tracks = MeetingApi.extract_tracks(json_part)
-    CacheAPI.cache_tracks(tracks)
-    print(JsonHandling.pretty_json(json_part))
-    #time.sleep(0.2)
-    ## izabrao trku
-    meeting_key = "meeting_key=1229" #izabrao trku
-    json_part = ApiCommunication.get_api(host, API.SESSIONS.value, attr=[year, meeting_key])
-    print("-------------------------------")
-    print(JsonHandling.pretty_json(json_part))
-    #time.sleep(0.2)
-    ## izabrao sesiju i 
-    session_name = "session_name=Qualifying"
-    session_key = "session_key=9472"
-    driver_number = "driver_number=44"
-    json_part = ApiCommunication.get_api(host, API.STINTS.value, attr=[session_key, driver_number])
-    print("-------------------------------")
-    time.sleep(0.2)
-    ## pre backed analize ili specificne stvari vezano za vozace ili nesto slicno ? 
-    session_name = "session_name=Qualifying"
-    session_key = "session_key=9468"
-    print(JsonHandling.pretty_json(json_part))
-    json_part = ApiCommunication.get_api(host, API.LAPS.value, attr=[session_key, driver_number])
-    print("-------------------------------")
-    print(JsonHandling.pretty_json(json_part))
-
-    
-
-    # for num,i in enumerate(json_part[:], start=1):
-    #     print(f"Lap: {num}", i["duration_sector_1"], i["duration_sector_2"], i["duration_sector_3"], i['lap_duration'])
-  
+    if not CacheAPI.exists_data(SetParam.session_key, "laps"):
+        os.makedirs((f"data/cached_calls/laps/{Setparam.session_key}"), exist_ok=True)
+        for num in Setparam.list_driver_numbers:
+            time.sleep(0.5)
+            if not CacheAPI.exists_data(num, f"laps/{Setparam.session_key}") or not len(os.listdir(f"data/cached_calls/laps/{Setparam.session_key}")) == 20:
+                json_part = ApiCommunication.get_api(host, API.LAPS.value, attr=[f"session_key={Setparam.session_key}", f"driver_number={num}"])
+                #pretty_json = JsonHandling.pretty_json(json_part)
+                CacheAPI.cache_laps_data(json_part, Setparam.session_key, num)
 
 
-
+    SimulateGui.show_analysis_option()
+    while True:
+        if SimulateGui.choose_analysis() == 1:
+            race = Analysis(Setparam.session_key, Setparam.meeting_key)
+            print("Plotting session stints...")
+            race.stints(Setparam)
+            print("Stints ploted")
+        elif SimulateGui.choose_analysis() == 2:
+            race = Analysis(Setparam.session_key, Setparam.meeting_key)
+            Laps.get_single_df_laps(Setparam.session_key, 1)
+            race.drivers_lap_time(Setparam, 1)
+        elif SimulateGui.choose_analysis() == 0:
+            sys.exit()
 
 
 
 
 if __name__ == "__main__":
+    end = time.time()
 
     main()
