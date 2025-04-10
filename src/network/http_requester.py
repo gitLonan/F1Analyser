@@ -9,7 +9,7 @@ class HttpRequest():
 
     def establish_Connection(host):
         try:
-            raw_socket = socket.create_connection((host, port), timeout=5)
+            raw_socket = socket.create_connection((host, port), timeout=15)
             return raw_socket
         except socket.gaierror as error:
            print(f"Error: {error.errno}, Message: {error.strerror}")

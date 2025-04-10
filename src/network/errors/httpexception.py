@@ -9,7 +9,6 @@ class HttpException(Exception):
         elif 500 <= code < 600:
              return ServerError.error(code, text, host)
     
-
 class ClientError(HttpException):
     @classmethod
     def error(cls, code, text, host):
@@ -30,5 +29,8 @@ class ServerError(HttpException):
             """
         return cls(message)
     
-
-
+class WrongApiPath(HttpException):
+    @classmethod
+    def exception(cls, code, text, host):
+        print("Wrong path ")
+    
