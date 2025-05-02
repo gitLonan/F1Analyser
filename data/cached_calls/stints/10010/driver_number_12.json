@@ -1,0 +1,72 @@
+[
+    {
+        "meeting_key": 1257,
+        "session_key": 10010,
+        "stint_number": 1,
+        "driver_number": 12,
+        "lap_start": 1,
+        "lap_end": 4,
+        "compound": "SOFT",
+        "tyre_age_at_start": 0
+    },
+    {
+        "meeting_key": 1257,
+        "session_key": 10010,
+        "stint_number": 2,
+        "driver_number": 12,
+        "lap_start": 5,
+        "lap_end": 7,
+        "compound": "SOFT",
+        "tyre_age_at_start": 0
+    },
+    {
+        "meeting_key": 1257,
+        "session_key": 10010,
+        "stint_number": 3,
+        "driver_number": 12,
+        "lap_start": 8,
+        "lap_end": 9,
+        "compound": "SOFT",
+        "tyre_age_at_start": 3
+    },
+    {
+        "meeting_key": 1257,
+        "session_key": 10010,
+        "stint_number": 4,
+        "driver_number": 12,
+        "lap_start": 10,
+        "lap_end": 12,
+        "compound": "SOFT",
+        "tyre_age_at_start": 0
+    },
+    {
+        "meeting_key": 1257,
+        "session_key": 10010,
+        "stint_number": 5,
+        "driver_number": 12,
+        "lap_start": 13,
+        "lap_end": 15,
+        "compound": "SOFT",
+        "tyre_age_at_start": 0
+    },
+    {
+        "meeting_key": 1257,
+        "session_key": 10010,
+        "stint_number": 6,
+        "driver_number": 12,
+        "lap_start": 16,
+        "lap_end": 18,
+        "compound": "SOFT",
+        "tyre_age_at_start": 0
+    },
+    {
+        "meeting_key": 1257,
+        "session_key": 10010,
+        "stint_number": 7,
+        "driver_number": 12,
+        "lap_start": 19,
+        "lap_end": 21,
+        "compound": "SOFT",
+        "tyre_age_at_start": 0
+    }
+]

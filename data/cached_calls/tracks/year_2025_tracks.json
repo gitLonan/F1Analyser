@@ -58,5 +58,20 @@
         "gmt_offset": "09:00:00",
         "date_start": "2025-04-04T02:30:00+00:00",
         "year": 2025
+    },
+    {
+        "circuit_key": 63,
+        "circuit_short_name": "Sakhir",
+        "meeting_key": 1257,
+        "meeting_code": "BRN",
+        "location": "Sakhir",
+        "country_key": 36,
+        "country_code": "BRN",
+        "country_name": "Bahrain",
+        "meeting_name": "Bahrain Grand Prix",
+        "meeting_official_name": "FORMULA 1 GULF AIR BAHRAIN GRAND PRIX 2025",
+        "gmt_offset": "03:00:00",
+        "date_start": "2025-04-11T11:30:00+00:00",
+        "year": 2025
     }
 ]
