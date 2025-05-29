@@ -8,6 +8,8 @@ class HttpException(Exception):
             return ClientError.error(code, text, host)
         elif 500 <= code < 600:
              return ServerError.error(code, text, host)
+        else:
+            return cls(f"Unexpected HTTP status {code}: {text} from {host}")
     
 class ClientError(HttpException):
     @classmethod
@@ -32,5 +34,5 @@ class ServerError(HttpException):
 class WrongApiPath(HttpException):
     @classmethod
     def exception(cls, code, text, host):
-        print("Wrong path ")
+        raise cls(f"Wrong API Path: {code} {text} from {host}")
     
