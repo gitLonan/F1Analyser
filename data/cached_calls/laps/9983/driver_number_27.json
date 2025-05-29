@@ -1,0 +1,380 @@
+[
+    {
+        "meeting_key": 1260,
+        "session_key": 9983,
+        "driver_number": 27,
+        "lap_number": 1,
+        "date_start": "2025-05-17T14:00:02.285000+00:00",
+        "duration_sector_1": null,
+        "duration_sector_2": 34.252,
+        "duration_sector_3": 30.519,
+        "i1_speed": 188,
+        "i2_speed": 218,
+        "is_pit_out_lap": true,
+        "lap_duration": null,
+        "segments_sector_1": [
+            2064,
+            2064,
+            2049,
+            2049,
+            2049,
+            2049
+        ],
+        "segments_sector_2": [
+            2049,
+            2049,
+            2049,
+            2049,
+            2049,
+            2049,
+            2049
+        ],
+        "segments_sector_3": [
+            2049,
+            2049,
+            2049,
+            2049,
+            2051,
+            2051,
+            2051,
+            2051
+        ],
+        "st_speed": 258
+    },
+    {
+        "meeting_key": 1260,
+        "session_key": 9983,
+        "driver_number": 27,
+        "lap_number": 2,
+        "date_start": "2025-05-17T14:01:36.629000+00:00",
+        "duration_sector_1": 24.406,
+        "duration_sector_2": 26.643,
+        "duration_sector_3": 25.973,
+        "i1_speed": 227,
+        "i2_speed": 261,
+        "is_pit_out_lap": false,
+        "lap_duration": 77.022,
+        "segments_sector_1": [
+            2049,
+            2049,
+            2051,
+            2049,
+            2049,
+            2049
+        ],
+        "segments_sector_2": [
+            2049,
+            2049,
+            2051,
+            2049,
+            2049,
+            2049,
+            2049
+        ],
+        "segments_sector_3": [
+            2049,
+            2049,
+            2049,
+            2051,
+            2049,
+            2051,
+            2051,
+            2049
+        ],
+        "st_speed": 299
+    },
+    {
+        "meeting_key": 1260,
+        "session_key": 9983,
+        "driver_number": 27,
+        "lap_number": 3,
+        "date_start": "2025-05-17T14:02:53.755000+00:00",
+        "duration_sector_1": 32.225,
+        "duration_sector_2": 31.541,
+        "duration_sector_3": 35.441,
+        "i1_speed": 196,
+        "i2_speed": 238,
+        "is_pit_out_lap": false,
+        "lap_duration": 99.207,
+        "segments_sector_1": [
+            2048,
+            2048,
+            2048,
+            2048,
+            2048,
+            2048
+        ],
+        "segments_sector_2": [
+            2048,
+            2048,
+            2048,
+            2048,
+            2048,
+            2048,
+            2048
+        ],
+        "segments_sector_3": [
+            2048,
+            2048,
+            2048,
+            2048,
+            2048,
+            2048,
+            2048,
+            2064
+        ],
+        "st_speed": 238
+    },
+    {
+        "meeting_key": 1260,
+        "session_key": 9983,
+        "driver_number": 27,
+        "lap_number": 4,
+        "date_start": "2025-05-17T14:20:14.749000+00:00",
+        "duration_sector_1": null,
+        "duration_sector_2": 32.128,
+        "duration_sector_3": null,
+        "i1_speed": 200,
+        "i2_speed": 233,
+        "is_pit_out_lap": true,
+        "lap_duration": null,
+        "segments_sector_1": [
+            2064,
+            2064,
+            2048,
+            2048,
+            2048,
+            2048
+        ],
+        "segments_sector_2": [
+            2048,
+            2048,
+            2048,
+            2048,
+            2048,
+            2048,
+            2048
+        ],
+        "segments_sector_3": [
+            2048,
+            2048,
+            2048,
+            2048,
+            0,
+            0,
+            0,
+            0
+        ],
+        "st_speed": 246
+    },
+    {
+        "meeting_key": 1260,
+        "session_key": 9983,
+        "driver_number": 27,
+        "lap_number": 5,
+        "date_start": "2025-05-17T14:21:51.156000+00:00",
+        "duration_sector_1": 24.186,
+        "duration_sector_2": 26.589,
+        "duration_sector_3": 25.743,
+        "i1_speed": 230,
+        "i2_speed": 259,
+        "is_pit_out_lap": false,
+        "lap_duration": 83.576,
+        "segments_sector_1": [
+            2049,
+            2049,
+            2049,
+            2049,
+            2049,
+            2049
+        ],
+        "segments_sector_2": [
+            2049,
+            2048,
+            2048,
+            2049,
+            2049,
+            2048,
+            2048
+        ],
+        "segments_sector_3": [
+            2048,
+            2049,
+            2049,
+            2049,
+            2049,
+            2048,
+            2048,
+            2049
+        ],
+        "st_speed": 299
+    },
+    {
+        "meeting_key": 1260,
+        "session_key": 9983,
+        "driver_number": 27,
+        "lap_number": 6,
+        "date_start": "2025-05-17T14:23:07.672000+00:00",
+        "duration_sector_1": 31.858,
+        "duration_sector_2": 30.932,
+        "duration_sector_3": 43.703,
+        "i1_speed": 199,
+        "i2_speed": 238,
+        "is_pit_out_lap": false,
+        "lap_duration": 106.493,
+        "segments_sector_1": [
+            2048,
+            2048,
+            2048,
+            2048,
+            2048,
+            2048
+        ],
+        "segments_sector_2": [
+            2048,
+            2048,
+            2048,
+            2048,
+            2048,
+            2048,
+            2048
+        ],
+        "segments_sector_3": [
+            2048,
+            2048,
+            2048,
+            2048,
+            2048,
+            2048,
+            2048,
+            2064
+        ],
+        "st_speed": 234
+    },
+    {
+        "meeting_key": 1260,
+        "session_key": 9983,
+        "driver_number": 27,
+        "lap_number": 7,
+        "date_start": "2025-05-17T14:28:36.190000+00:00",
+        "duration_sector_1": null,
+        "duration_sector_2": 33.57,
+        "duration_sector_3": null,
+        "i1_speed": 194,
+        "i2_speed": 216,
+        "is_pit_out_lap": true,
+        "lap_duration": null,
+        "segments_sector_1": [
+            2064,
+            2064,
+            2048,
+            2048,
+            2048,
+            2048
+        ],
+        "segments_sector_2": [
+            2048,
+            2048,
+            2048,
+            2048,
+            2048,
+            2048,
+            2048
+        ],
+        "segments_sector_3": [
+            2048,
+            2048,
+            2048,
+            2048,
+            0,
+            0,
+            0,
+            0
+        ],
+        "st_speed": 248
+    },
+    {
+        "meeting_key": 1260,
+        "session_key": 9983,
+        "driver_number": 27,
+        "lap_number": 8,
+        "date_start": "2025-05-17T14:30:17.285000+00:00",
+        "duration_sector_1": 24.132,
+        "duration_sector_2": 26.366,
+        "duration_sector_3": 32.719,
+        "i1_speed": 231,
+        "i2_speed": 262,
+        "is_pit_out_lap": false,
+        "lap_duration": 83.217,
+        "segments_sector_1": [
+            2049,
+            2049,
+            2049,
+            2049,
+            2048,
+            2048
+        ],
+        "segments_sector_2": [
+            2049,
+            2049,
+            2048,
+            2048,
+            2049,
+            2049,
+            2049
+        ],
+        "segments_sector_3": [
+            2048,
+            2048,
+            2048,
+            2048,
+            0,
+            0,
+            0,
+            0
+        ],
+        "st_speed": 299
+    },
+    {
+        "meeting_key": 1260,
+        "session_key": 9983,
+        "driver_number": 27,
+        "lap_number": 9,
+        "date_start": "2025-05-17T14:31:34.067000+00:00",
+        "duration_sector_1": 34.337,
+        "duration_sector_2": 36.792,
+        "duration_sector_3": 45.364,
+        "i1_speed": 195,
+        "i2_speed": 172,
+        "is_pit_out_lap": false,
+        "lap_duration": 97.45,
+        "segments_sector_1": [
+            2048,
+            2048,
+            2048,
+            2048,
+            2048,
+            2048
+        ],
+        "segments_sector_2": [
+            2048,
+            2048,
+            2048,
+            2048,
+            2048,
+            2048,
+            2048
+        ],
+        "segments_sector_3": [
+            2048,
+            2048,
+            2048,
+            2048,
+            2048,
+            2048,
+            2048,
+            2064
+        ],
+        "st_speed": 160
+    }
+]

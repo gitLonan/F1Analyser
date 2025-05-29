@@ -1,0 +1,93 @@
+[
+    {
+        "date": "2025-05-18T12:07:39.467000+00:00",
+        "session_key": 9987,
+        "driver_number": 31,
+        "position": 18,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:04:06.466000+00:00",
+        "session_key": 9987,
+        "driver_number": 31,
+        "position": 17,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:05:05.285000+00:00",
+        "session_key": 9987,
+        "driver_number": 31,
+        "position": 18,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:05:06.330000+00:00",
+        "session_key": 9987,
+        "driver_number": 31,
+        "position": 19,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:05:08.366000+00:00",
+        "session_key": 9987,
+        "driver_number": 31,
+        "position": 20,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:17:48.135000+00:00",
+        "session_key": 9987,
+        "driver_number": 31,
+        "position": 19,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:19:10.316000+00:00",
+        "session_key": 9987,
+        "driver_number": 31,
+        "position": 18,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:21:55.756000+00:00",
+        "session_key": 9987,
+        "driver_number": 31,
+        "position": 17,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:23:17.634000+00:00",
+        "session_key": 9987,
+        "driver_number": 31,
+        "position": 18,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:24:42.121000+00:00",
+        "session_key": 9987,
+        "driver_number": 31,
+        "position": 19,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:26:06.239000+00:00",
+        "session_key": 9987,
+        "driver_number": 31,
+        "position": 20,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:35:45.643000+00:00",
+        "session_key": 9987,
+        "driver_number": 31,
+        "position": 19,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:42:39.169000+00:00",
+        "session_key": 9987,
+        "driver_number": 31,
+        "position": 20,
+        "meeting_key": 1260
+    }
+]

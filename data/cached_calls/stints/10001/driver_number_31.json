@@ -1,0 +1,42 @@
+[
+    {
+        "meeting_key": 1256,
+        "session_key": 10001,
+        "stint_number": 1,
+        "driver_number": 31,
+        "lap_start": 1,
+        "lap_end": 2,
+        "compound": "HARD",
+        "tyre_age_at_start": 0
+    },
+    {
+        "meeting_key": 1256,
+        "session_key": 10001,
+        "stint_number": 2,
+        "driver_number": 31,
+        "lap_start": 3,
+        "lap_end": 7,
+        "compound": "HARD",
+        "tyre_age_at_start": 0
+    },
+    {
+        "meeting_key": 1256,
+        "session_key": 10001,
+        "stint_number": 3,
+        "driver_number": 31,
+        "lap_start": 8,
+        "lap_end": 16,
+        "compound": "HARD",
+        "tyre_age_at_start": 0
+    },
+    {
+        "meeting_key": 1256,
+        "session_key": 10001,
+        "stint_number": 4,
+        "driver_number": 31,
+        "lap_start": 17,
+        "lap_end": 18,
+        "compound": "SOFT",
+        "tyre_age_at_start": 0
+    }
+]
