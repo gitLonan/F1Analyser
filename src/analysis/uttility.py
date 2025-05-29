@@ -1,10 +1,10 @@
 
 
 
-class Session:
-    def __init__(self, session_key, meeting_key):
-        self.session_key = session_key
-        self.meeting_key = meeting_key
+# class Session:
+#     def __init__(self, session_key, meeting_key):
+#         self.session_key = session_key
+#         self.meeting_key = meeting_key
 
 
 
@@ -15,11 +15,14 @@ class SetParam:
     session_key = 0
     meeting_key = 0
 
+    meeting_key_attr = ''
+    session_key_attr = ''
 
     list_meeting_key = []
     list_session_key = []
-    list_driver = []
+    
     list_driver_numbers = []
+    index_for_selecting_drivers = []
     drivers = []
 
     @classmethod
