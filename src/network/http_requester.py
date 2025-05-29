@@ -22,7 +22,13 @@ class HttpRequest():
     
     def status_code(response: str) -> tuple[str,str]:
         """ Extracts HTTP status code from the response """
+        if not response:
+            print("Error: Empty response received.")
+            return 0, "No Response"
         splited_response = response.split("\r\n")
+        if len(splited_response) < 3:
+            print("Error, couldnt parse code response")
+            return 0, "Parsing error"
         code = splited_response[0].split(" ")[1]
         text = splited_response[0].split(" ")[2]
         print(code, text)
