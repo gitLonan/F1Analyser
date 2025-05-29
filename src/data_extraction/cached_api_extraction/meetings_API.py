@@ -2,8 +2,10 @@ import json
 
 
 class MeetingApi:
+
+    
     @staticmethod
-    def extract_tracks(year: str, Setparam) -> json:
+    def set_meeting_keys(year: str, Setparam) -> json:
         """ Extracts tracks and their respected keys - key is a unique number """
         dir_path_content = f"data/cached_calls/tracks/year_{year}_tracks.json"
         track_list = []
@@ -17,9 +19,9 @@ class MeetingApi:
         return track_list
         
     @staticmethod
-    def extract_track_sessions(json_data: json, Setparam) -> json:
+    def set_session_keys(json_data: json, Setparam) -> json:
         """ Extracts all the sessions that happend during the event(f1 weekend) """
-        dir_path_content = f"data/cached_calls/sessions/session_{Setparam.meeting_key}_tracks_data.json"
+        dir_path_content = f"data/cached_calls/sessions/meeting_{Setparam.meeting_key}_tracks_data.json"
         session_list = []
         session_key_list = []
         with open(dir_path_content, "r") as file:
