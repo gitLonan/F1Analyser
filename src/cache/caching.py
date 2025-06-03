@@ -48,7 +48,9 @@ class CacheAPI:
             list_of_files = os.listdir(dir_path_content)
             print(list_of_files)
         except FileNotFoundError:
-            os.makedirs((f"data/cached_calls/{folder}"), exist_ok=True)
+            print("We dont have that file")
+            return False
+            #os.makedirs((f"data/cached_calls/{folder}"), exist_ok=True)
 
         list_of_files = os.listdir(dir_path_content)
 

@@ -5,9 +5,14 @@ import sys
 class SimulateGui:
 
 
-    def get_year_input() -> None:
+    def get_year_input(setparam) -> None:
         year = input("What year of F1 do you want to look up: ",)
-        return year, f"year={year}"
+        _ = year.split()
+        if _[1] == "new":
+            print("Call this api again")
+            setparam.call_again = True
+        int_year = _[0]
+        return int_year, f"year={int_year}"
 
     def get_meeting_key(Setparam) -> str:
         while True:
@@ -52,7 +57,7 @@ class SimulateGui:
             try:
                 key = int(input("Select drivers:"))
                 if key not in selected_drivers and key != 0:
-                    selected_drivers.append(key)
+                    selected_drivers.append(key-1)
             except Exception:
                 continue
             if key == 0:

@@ -16,6 +16,5 @@ class CarData:
                 _ = json.load(file)
                 cardata = pl.DataFrame(_)
                 list_df_cardata.append(cardata)
-        #df_cardata = pl.concat(list_df_cardata, how="vertical")
-        #print(df_cardata)
+        
         return list_df_cardata

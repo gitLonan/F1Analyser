@@ -25,14 +25,15 @@ after_importing = time.time()
 print("Time it took to load imports: ", after_importing-start)
 
 
+
 def main():
     host = 'api.openf1.org'
     setparam = SetParam()
     current_year = datetime.now().year
 
-    year, year_attr = SimulateGui.get_year_input()
+    year, year_attr = SimulateGui.get_year_input(setparam)
     print(type(year), type(current_year), year_attr)
-    if int(year) == current_year:
+    if setparam.call_again == True:
         print("USAO", year, year_attr)
         json_part = ApiCommunication.get_api(host, API.MEETINGS.value, attr=[year_attr])
         CacheAPI.cache_tracks(json_part, year)
@@ -132,21 +133,23 @@ def main():
         elif key == 4:
             analysis = Analysis(setparam.session_key, setparam.meeting_key)
             SimulateGui.show_drivers(setparam.drivers)
+
             index_for_selecting_drivers = SimulateGui.choose_drivers_for_car_data(setparam)
             setparam.index_for_selecting_drivers = index_for_selecting_drivers
-            #print(index_for_selecting_drivers)
+
             if not CacheAPI.exists_data(setparam.session_key, "car_data"):
                  drivers = setparam.list_driver_numbers
                  os.makedirs((f"data/cached_calls/car_data/{setparam.session_key}"), exist_ok=True)
                  for num in index_for_selecting_drivers:
-                    time.sleep(0.2)
-                    if not CacheAPI.exists_data(drivers[num], f"car_data/{setparam.session_key}/driver_number_{drivers[num]}.json"):
+                    time.sleep(0.1)
+                    if not CacheAPI.exists_data(drivers[num], f"car_data/{setparam.session_key}/driver_number_{drivers[num]}"):
                         json_part = ApiCommunication.get_api(host, API.CARDATA.value, attr=[f"session_key={setparam.session_key}", f"driver_number={drivers[num]}"])
                         if len(json_part) == 0:
                             print("No LAP data for that driver")
                             continue
                         CacheAPI.cache_car_data(json_part, setparam.session_key, drivers[num])
-            driv = [drivers[num-1] for num in index_for_selecting_drivers]
+
+            driv = [drivers[num] for num in index_for_selecting_drivers]
             print("These are selected drivers", driv)
             df_speed_data, df_list_lap_number_and_start_date = analysis.car_data(driv, setparam)
             PlotingAnalysis.plot_car_data(df_speed_data, df_list_lap_number_and_start_date)
