@@ -18,6 +18,8 @@ class SetParam:
     meeting_key_attr = ''
     session_key_attr = ''
 
+    call_again = False
+
     list_meeting_key = []
     list_session_key = []
     
