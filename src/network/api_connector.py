@@ -46,39 +46,29 @@ class ApiCommunication:
         f"Connection: close\r\n"
         f"\r\n"
     )
-        for i in range(0,6):
-            time.sleep(0.5)
-            connection = HttpRequest.establish_Connection(host)
-            secure_con = HttpRequest.ssl_wrapper(host, connection)
-            
-            secure_con.sendall(request.encode())
-            print("======== REQUEST DEBUG ========")
-            print("Host:", host)
-            print("API Path:", api)
-            print("Full request:\n", request)
-            print("================================")
-            response = b""
-            while True:
-                try:
-                    chunk = secure_con.recv(4096) #industry standard for size of chunks to communicate with
-                    if not chunk:
-                        break
-                    response += chunk
-                except socket.timeout:
-                    print("Socket timed out")
+        connection = HttpRequest.establish_Connection(host)
+        secure_con = HttpRequest.ssl_wrapper(host, connection)
+        
+        secure_con.sendall(request.encode())
+        print("======== REQUEST DEBUG ========")
+        print("Host:", host)
+        print("API Path:", api)
+        print("Full request:\n", request)
+        print("================================")
+        response = b""
+        while True:
+            try:
+                chunk = secure_con.recv(4096) #industry standard for size of chunks to communicate with
+                if not chunk:
                     break
-            response_text = response.decode()
-            print("Raw response`", response_text)
-            code, text = HttpRequest.status_code(response_text)
-            code = int(code)
-                
-            if code == 200:
-                secure_con.close()
-                return response_text
-            secure_con.close()
-        if int(code) == 500:
-            return ""
-        raise HttpException.exception(code, text, host)
+                response += chunk
+            except socket.timeout:
+                print("Socket timed out")
+                break
+        response_text = response.decode()
+        print("Raw response`", response_text)
+        secure_con.close()
+        return response_text
 
     def get_api(host: str, api_path: str, attr: list[str]) -> json:
         """
@@ -90,15 +80,24 @@ class ApiCommunication:
             Return:
                 json part of the response
         """
-        response_data = ApiCommunication.communication(host, api_path, attributes=attr)
-        code, text = HttpRequest.status_code(response_data)
+        for i in range(0,6):
+            time.sleep(0.2)
+            response_data = ApiCommunication.communication(host, api_path, attributes=attr)
+            code, text = HttpRequest.status_code(response_data)
+            code = int(code)
+            if code == 200:
+                break
+            elif code == 104:
+                print("Their server reseted connection")
+                time.sleep(3)
+                continue
+            else:
+                HttpException.exception(int(code), text, host)
+        if code != 200:
+            raise HttpException.exception(int(code), text, host)
         if len(response_data) == 0:
             return ""
         json_part = JsonHandling.extracting_json(response_data)
-        if len(json_part) == 0 and int(code) != 200:
-            print("Entered invalid year or API path, can't go below 2023 and above 2025(for now) - date: 3.26.2025")
-            sys.exit()
-
         return json_part
     
 

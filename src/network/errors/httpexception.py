@@ -8,6 +8,7 @@ class HttpException(Exception):
             return ClientError.error(code, text, host)
         elif 500 <= code < 600:
              return ServerError.error(code, text, host)
+
         else:
             return cls(f"Unexpected HTTP status {code}: {text} from {host}")
     
