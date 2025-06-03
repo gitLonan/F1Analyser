@@ -133,5 +133,20 @@
         "gmt_offset": "02:00:00",
         "date_start": "2025-05-23T11:30:00+00:00",
         "year": 2025
+    },
+    {
+        "meeting_key": 1262,
+        "circuit_key": 15,
+        "circuit_short_name": "Catalunya",
+        "meeting_code": "ESP",
+        "location": "Barcelona",
+        "country_key": 1,
+        "country_code": "ESP",
+        "country_name": "Spain",
+        "meeting_name": "Spanish Grand Prix",
+        "meeting_official_name": "FORMULA 1 ARAMCO GRAN PREMIO DE ESPA\u00d1A 2025",
+        "gmt_offset": "02:00:00",
+        "date_start": "2025-05-30T11:30:00+00:00",
+        "year": 2025
     }
 ]
