@@ -8,10 +8,13 @@ class SimulateGui:
     def get_year_input(setparam) -> None:
         year = input("What year of F1 do you want to look up: ",)
         _ = year.split()
-        if _[1] == "new":
-            print("Call this api again")
-            setparam.call_again = True
-        int_year = _[0]
+        try:
+            if _[1] == "new":
+                print("Call this api again")
+                setparam.call_again = True
+                int_year = _[0]
+        except IndexError:
+            int_year = _[0]
         return int_year, f"year={int_year}"
 
     def get_meeting_key(Setparam) -> str:
@@ -61,9 +64,11 @@ class SimulateGui:
             except Exception:
                 continue
             if key == 0:
-                return selected_drivers
+                setparam.index_for_selecting_drivers = selected_drivers
+                return
             elif key == 123:
-                return [i for i in range(0, len(setparam.drivers))]
+                setparam.index_for_selecting_drivers = [i for i in range(0, len(setparam.drivers))]
+                return 
 
     def select_lap_for_car_data_analysis(lap_numbers):
         lap = 0
