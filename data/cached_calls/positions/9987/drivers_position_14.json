@@ -1,0 +1,198 @@
+[
+    {
+        "date": "2025-05-18T12:07:39.467000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 5,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:18:40.813000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 4,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:20:04.147000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 5,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:20:04.996000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 6,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:20:05.817000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 7,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:20:06.337000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 8,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:20:06.875000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 9,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:21:34.182000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 10,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:21:34.974000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 11,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:21:35.775000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 12,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:21:36.739000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 13,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:21:47.694000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 14,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:21:49.628000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 15,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:23:13.118000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 16,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:24:36.558000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 15,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:35:31.674000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 14,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:46:09.190000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 8,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:50:15.160000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 9,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:54:24.611000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 10,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:58:31.273000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 11,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T13:59:53.597000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 12,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T14:02:39.331000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 13,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T14:06:55.542000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 12,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T14:10:31.150000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 13,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T14:10:39.702000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 14,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T14:24:52.377000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 13,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T14:27:32.973000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 12,
+        "meeting_key": 1260
+    },
+    {
+        "date": "2025-05-18T14:30:13.186000+00:00",
+        "session_key": 9987,
+        "driver_number": 14,
+        "position": 11,
+        "meeting_key": 1260
+    }
+]
