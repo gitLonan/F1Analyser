@@ -43,10 +43,6 @@ class SetParam:
     def set_session_key_list(cls, key_list: list[str]):
         cls.list_session_key = key_list
 
-#Ako mislim da naapravim da je svaki vozac svoj objekat, mogao bih to preko ovih classmethod funckija. Tako sto se objekat kreira kad se
-#pozove funkcija i to je to, sa svim parametrima, da li to znaci da mi treba linked list ? ce vidimo 
-
-
 
     
     
