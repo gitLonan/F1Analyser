@@ -1,4 +1,4 @@
-import socket
+
 
 class HttpException(Exception):
 
@@ -8,7 +8,6 @@ class HttpException(Exception):
             return ClientError.error(code, text, host)
         elif 500 <= code < 600:
              return ServerError.error(code, text, host)
-
         else:
             return cls(f"Unexpected HTTP status {code}: {text} from {host}")
     
@@ -30,7 +29,7 @@ class ServerError(HttpException):
 
             Check if your api is correct, maybe there is some kind of typo
             """
-        return cls(message)
+        raise message
     
 class WrongApiPath(HttpException):
     @classmethod
