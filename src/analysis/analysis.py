@@ -9,7 +9,7 @@ from src.data_extraction.cached_api_extraction.sessions_API import SessionAPi
 # other imports
 
 import polars as pl
-import json
+
 
 class Analysis:
     """Class for general analysis"""
@@ -110,7 +110,7 @@ class Analysis:
                 .alias("date_start")
                                 )
             df_list_lap_number_and_start_date.append(df) 
-            print("AAAAAAAAAAAAAAAAAAAAAAaaa", df_list_lap_number_and_start_date)
+            #print("AAAAAAAAAAAAAAAAAAAAAAaaa", df_list_lap_number_and_start_date)
         return df_list_speed, df_list_lap_number_and_start_date
 
         
