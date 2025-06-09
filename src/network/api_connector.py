@@ -21,6 +21,7 @@ class API(Enum):
     SESSIONS = "/v1/sessions?"
     MEETINGS = "/v1/meetings?"
     CARDATA = "/v1/car_data?"
+    LOCATION = "/v1/location?"
 
 class ApiCommunication:
 
