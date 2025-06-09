@@ -1,15 +1,18 @@
 # my improts
-from src.data_extraction.jsonhandling import JsonHandling
 from src.sim_gui import SimulateGui
 
 # other imports
 import  matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
-import json
+from enum import Enum
 import polars as pl
 import numpy as np
-#import dataframe_image as dfi
+import time
 
+class Save(Enum):
+    STINTS = "data/images_for_sending/stints.png"
+    FASTEST_SECTORS_LAPS = "data/images_for_sending/fastest_sectors_and_fastest_lap.png"
+    AVERAGE_FOR_STINTS = "data/images_for_sending/average_for_stints.png"
 class PlotingAnalysis:
 
 
@@ -50,7 +53,7 @@ class PlotingAnalysis:
         plt.title("Race Stints")
         plt.legend(handles=legend_handles, loc='upper left', bbox_to_anchor=(1.05, 1))
         plt.tight_layout()
-        plt.savefig("images_for_sending/stints.png", bbox_inches='tight', dpi=300)
+        plt.savefig(Save.STINTS.value, bbox_inches='tight', dpi=300)
         plt.close()
         #plt.show()
 
@@ -63,7 +66,7 @@ class PlotingAnalysis:
 
         table = ax.table(cellText=data, colLabels=columns, loc='center')
         print(table)
-        plt.savefig("images_for_sending/fastest_sectors_and_fastest_lap.png", bbox_inches='tight', dpi=300)
+        plt.savefig(Save.FASTEST_SECTORS_LAPS.value, bbox_inches='tight', dpi=300)
         plt.close()
 
     def plot_average_for_stints(df_average_for_stints) -> None:
@@ -76,7 +79,7 @@ class PlotingAnalysis:
 
         table = ax.table(cellText=data, colLabels=columns, loc='center')
         print(table)
-        plt.savefig("images_for_sending/average_for_stints.png", bbox_inches='tight', dpi=300)
+        plt.savefig(Save.AVERAGE_FOR_STINTS.value, bbox_inches='tight', dpi=300)
         plt.close()
 
     def plot_car_data(df_list_speed, df_list_lap_number_and_start_date):
@@ -90,11 +93,30 @@ class PlotingAnalysis:
 
             driver = driver.filter(driver['date'] <= end)
             driver = driver.filter(driver['date'] >= start)
-            speeds = driver["speed"].to_numpy()
-            driver_name = driver["name"].to_numpy()[0]
+            
 
-            times = times = np.arange(len(driver['date']))
-            plt.plot(times, speeds, label=driver_name)
+            
+
+            speeds = driver["speed"].to_numpy()
+            driver_name = driver["name"][0]
+
+            driver = driver.with_columns([
+            pl.col("date").str.to_datetime().alias("datetime")
+        ])
+
+        # Get the first datetime
+            start_time = driver["datetime"][0]
+
+            # Compute difference in seconds relative to the first datetime
+            df = driver.with_columns([
+                ((pl.col("datetime") - start_time).dt.total_microseconds() / 1_000_000)
+                .alias("time_elapsed_seconds")
+            ])
+
+            print(df)
+            pdf = df.to_pandas()
+                
+            plt.plot(pdf["time_elapsed_seconds"], speeds, label=driver_name)
 
         plt.title("Driver Speed Over Time")
         plt.xlabel("Time (s)")
