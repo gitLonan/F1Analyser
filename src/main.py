@@ -13,19 +13,15 @@ from src.analysis.analysis import Analysis, Race
 from src.analysis.ploting import PlotingAnalysis
 
 
-## my Func import
-
-
+## other import
 import time
 import os
 import sys
 from datetime import datetime
 
 
-
 after_importing = time.time()
 print("Time it took to load imports: ", after_importing-start)
-
 
 
 def main():
@@ -68,9 +64,6 @@ def main():
        #os.makedirs((f"data/cached_calls/stints/{setparam.session_key}"), exist_ok=True)
         
         for num in setparam.list_driver_numbers:
-            # response = requests.get(f"https://api.openf1.org/v1/stints?session_key={setparam.session_key}&driver_number={num}")
-            # print(response.json())
-            
             if not CacheAPI.exists_data(num, f"stints/{setparam.session_key}"):
                 json_part = ApiCommunication.get_api(host, API.STINTS.value, attr=[f"session_key={setparam.session_key}", f"driver_number={num}"])
                 pretty_json = JsonHandling.pretty_json(json_part)
@@ -136,10 +129,7 @@ def main():
         elif key == 4:
             analysis = Analysis(setparam.session_key, setparam.meeting_key)
             SimulateGui.show_drivers(setparam.drivers)
-
             SimulateGui.choose_drivers_for_car_data(setparam)
-            
-
             if not CacheAPI.exists_data(setparam.session_key, "car_data"):
                  os.makedirs((f"data/cached_calls/car_data/{setparam.session_key}"), exist_ok=True)
                  for num in setparam.index_for_selecting_drivers:
@@ -155,12 +145,11 @@ def main():
             print("These are selected drivers", drivers)
             df_speed_data, df_list_lap_number_and_start_date = analysis.car_data(drivers, setparam)
             PlotingAnalysis.plot_car_data(df_speed_data, df_list_lap_number_and_start_date)
-
+        
         elif key == 5:
             race = Race(setparam.session_key, setparam.meeting_key)
             SimulateGui.show_drivers(setparam.drivers)
             SimulateGui.choose_drivers_for_car_data(setparam)
-        
             if not CacheAPI.exists_data(setparam.session_key, "location"):
                 os.makedirs((f"data/cached_calls/location/{setparam.session_key}"), exist_ok=True)
                 for num in setparam.index_for_selecting_drivers:
@@ -171,13 +160,7 @@ def main():
                             print(f"No Location data for {setparam.list_driver_numbers[num]}")
                             continue
                         CacheAPI.cache_car_location(json_part, setparam.session_key, setparam.list_driver_numbers[num])
-                
-
-
-
-
-
-
+            
         elif key == 0:
             sys.exit()
 
