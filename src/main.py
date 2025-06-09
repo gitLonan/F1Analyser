@@ -1,7 +1,7 @@
 import time
 start = time.time()
 ## my Class import
-from src.network.api_connector import ApiCommunication, API
+from src.web_request.api_connector import ApiCommunication, API
 from src.data_extraction.jsonhandling import JsonHandling
 from src.data_extraction.cached_api_extraction.meetings_API import MeetingApi
 from src.data_extraction.cached_api_extraction.drivers_API import DriversApi
