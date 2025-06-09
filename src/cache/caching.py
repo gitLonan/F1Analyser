@@ -39,6 +39,11 @@ class CacheAPI:
             pretty_json = JsonHandling.pretty_json(json_data)
             file.write(pretty_json)
     
+    def cache_car_location(json_data: json, session_key, driver) -> None:
+        with open(f"data/cached_calls/location/{session_key}/drivers_location_{driver}.json", "w") as file:
+            pretty_json = JsonHandling.pretty_json(json_data)
+            file.write(pretty_json)
+    
     def exists_data(parmeter: str, folder: str) -> bool:
         """Returns true if the data exists"""
         dir_path_content = f"data/cached_calls/{folder}"
